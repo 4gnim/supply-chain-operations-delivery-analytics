@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environment
+.env
+.env.*
+
+# Raw datasets
+data/raw/*.csv
+data/raw/*.zip
+
+# Large processed datasets
+data/processed/*.csv
+data/processed/marts/*.csv
+
+# Tableau temporary/cache files
+*.hyper
+*.tde
+*.tmp
+*.log
+
+# Tableau packaged workbooks
+tableau/*.twbx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

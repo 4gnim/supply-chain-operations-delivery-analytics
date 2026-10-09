@@ -253,7 +253,7 @@ supply-chain-operations-delivery-analytics/
 
 ## Tableau Public
 
-[View Interactive Dashboard](YOUR_TABLEAU_PUBLIC_LINK)
+[View Interactive Dashboard](https://public.tableau.com/app/profile/agni.musadad/viz/SupplyChainOperationsDeliveryAnalytics/02-DeliveryOperations)
 
 ## Case Study
 

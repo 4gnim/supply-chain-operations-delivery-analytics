@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supply Chain Operations & Delivery Analytics | Agni Musadad</title>
+  <meta
+    name="description"
+    content="An end-to-end supply chain analytics case study using Python and Tableau."
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Agni Musadad</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#process">Process</a>
+        <a href="#dashboards">Dashboards</a>
+        <a href="#findings">Findings</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">DATA ANALYTICS CASE STUDY</p>
+          <h1>Supply Chain Operations &amp; Delivery Analytics</h1>
+          <p class="hero-copy">
+            An end-to-end analysis of order fulfillment, delivery performance,
+            regional operations, sales, profitability, and product performance
+            using Python and Tableau.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="https://public.tableau.com/app/profile/agni.musadad/viz/SupplyChainOperationsDeliveryAnalytics/02-DeliveryOperations" target="_blank" rel="noopener noreferrer">
+              View Interactive Tableau Dashboard
+            </a>
+            <a class="button secondary" href="#findings">View Key Findings</a>
+          </div>
+
+          <div class="meta">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Tableau</span>
+            <span>Supply Chain Analytics</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-stat">
+            <strong>180,519</strong>
+            <span>order-item records</span>
+          </div>
+          <div class="hero-stat">
+            <strong>65,752</strong>
+            <span>unique orders</span>
+          </div>
+          <div class="hero-stat">
+            <strong>57.31%</strong>
+            <span>late delivery rate</span>
+          </div>
+          <div class="hero-stat">
+            <strong>10.78%</strong>
+            <span>profit margin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">01 — PROJECT OVERVIEW</p>
+          <h2>From transactional data to operational insight</h2>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <p>
+              This project analyzes a large transactional supply chain dataset
+              to understand how orders perform across delivery, shipping modes,
+              regions, departments, products, sales, and profitability.
+            </p>
+            <p>
+              The workflow was designed as a reproducible analytics process:
+              profiling the raw data, validating its structure, cleaning and
+              transforming relevant fields, creating analytical datasets, and
+              building interactive Tableau dashboards for business exploration.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Business objectives</h3>
+            <ul>
+              <li>Monitor overall sales and profitability.</li>
+              <li>Measure delivery and shipping performance.</li>
+              <li>Identify regional and shipping-related delivery patterns.</li>
+              <li>Understand department and product performance.</li>
+              <li>Present the analysis through interactive dashboards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">02 — DATASET</p>
+          <h2>Data used in the analysis</h2>
+        </div>
+
+        <div class="data-grid">
+          <div class="metric-card">
+            <span class="metric-label">Records</span>
+            <strong>180,519</strong>
+            <small>order-item records</small>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Orders</span>
+            <strong>65,752</strong>
+            <small>distinct orders</small>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Customers</span>
+            <strong>20,652</strong>
+            <small>unique customer IDs</small>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Products</span>
+            <strong>118</strong>
+            <small>product IDs</small>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Categories</span>
+            <strong>50</strong>
+            <small>product categories</small>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Departments</span>
+            <strong>11</strong>
+            <small>departments</small>
+          </div>
+        </div>
+
+        <div class="source-note">
+          <strong>Dataset source:</strong>
+          <a
+            href="https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DataCo Smart Supply Chain for Big Data Analysis — Kaggle
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">03 — ANALYTICAL PROCESS</p>
+          <h2>How the data was prepared</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-no">01</div>
+            <h3>Profiling</h3>
+            <p>
+              Inspected dimensions, data types, missing values, duplicates,
+              key uniqueness, categories, status fields, and date ranges.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-no">02</div>
+            <h3>Validation</h3>
+            <p>
+              Confirmed order-item uniqueness and verified that delivery,
+              shipping mode, scheduled days, actual days, and late-delivery
+              risk were consistent within each order.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-no">03</div>
+            <h3>Cleaning</h3>
+            <p>
+              Parsed dates, removed irrelevant fields, created shipping-delay
+              metrics, and retained only fields needed for analysis.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-no">04</div>
+            <h3>Analytical Marts</h3>
+            <p>
+              Built order-level, monthly, shipping-mode, regional, and
+              category-level analytical datasets for downstream reporting.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-no">05</div>
+            <h3>Dashboarding</h3>
+            <p>
+              Used Tableau to turn validated analytical datasets into
+              interactive views for executive, operational, and product analysis.
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>Important data-modeling decision:</strong>
+          The source data is at the <em>order-item</em> grain. Therefore,
+          order-level metrics use distinct order IDs, while item-level metrics
+          use row-level aggregation.
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">04 — KPI FRAMEWORK</p>
+          <h2>Core metrics</h2>
+        </div>
+
+        <div class="kpi-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total Orders</td>
+                <td>65,752</td>
+                <td>Distinct Order IDs</td>
+              </tr>
+              <tr>
+                <td>Total Sales</td>
+                <td>$36,784,735.01</td>
+                <td>Sum of recorded sales</td>
+              </tr>
+              <tr>
+                <td>Total Profit</td>
+                <td>$3,966,902.97</td>
+                <td>Sum of the dataset's recorded benefit/profit field</td>
+              </tr>
+              <tr>
+                <td>Profit Margin</td>
+                <td>10.78%</td>
+                <td>Total profit divided by total sales</td>
+              </tr>
+              <tr>
+                <td>Late Orders</td>
+                <td>36,048</td>
+                <td>Orders classified as late delivery</td>
+              </tr>
+              <tr>
+                <td>Shipped Orders</td>
+                <td>62,897</td>
+                <td>All orders except shipping-canceled orders</td>
+              </tr>
+              <tr>
+                <td>Late Delivery Rate</td>
+                <td>57.31%</td>
+                <td>Late orders divided by shipped orders</td>
+              </tr>
+              <tr>
+                <td>Avg. Actual Shipping Days</td>
+                <td>3.50</td>
+                <td>Average order-level actual shipping time</td>
+              </tr>
+              <tr>
+                <td>Avg. Scheduled Shipping Days</td>
+                <td>2.93</td>
+                <td>Average order-level scheduled shipping time</td>
+              </tr>
+              <tr>
+                <td>Avg. Shipping Delay</td>
+                <td>0.57 days</td>
+                <td>Difference between actual and scheduled shipping time</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboards" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">05 — TABLEAU DASHBOARD</p>
+          <h2>Three analytical perspectives</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <div class="dashboard-image placeholder">Executive Overview</div>
+            <div class="dashboard-content">
+              <span class="tag">01</span>
+              <h3>Executive Overview</h3>
+              <p>
+                High-level monitoring of sales, profit, margin, orders,
+                delivery performance, monthly trends, and market performance.
+              </p>
+            </div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="dashboard-image placeholder">Delivery &amp; Operations</div>
+            <div class="dashboard-content">
+              <span class="tag">02</span>
+              <h3>Delivery &amp; Operations</h3>
+              <p>
+                Operational analysis of late delivery, shipping modes,
+                scheduled versus actual shipping time, regions, and delay patterns.
+              </p>
+            </div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="dashboard-image placeholder">Product &amp; Profitability</div>
+            <div class="dashboard-content">
+              <span class="tag">03</span>
+              <h3>Product &amp; Profitability</h3>
+              <p>
+                Product and department analysis focused on sales, profit,
+                margin, quantity, and high- or low-performing products.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="center-action">
+          <a class="button primary" href="https://public.tableau.com/app/profile/agni.musadad/viz/SupplyChainOperationsDeliveryAnalytics/02-DeliveryOperations" target="_blank" rel="noopener noreferrer">
+            Open Interactive Tableau Dashboard
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="findings" class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">06 — KEY FINDINGS</p>
+          <h2>What the analysis shows</h2>
+        </div>
+
+        <div class="finding-grid">
+          <article class="finding">
+            <span class="finding-number">01</span>
+            <h3>Delivery is a major operational issue</h3>
+            <p>
+              36,048 of 62,897 shipped orders were classified as late,
+              resulting in a 57.31% late-delivery rate.
+            </p>
+          </article>
+
+          <article class="finding">
+            <span class="finding-number">02</span>
+            <h3>Actual shipping time exceeds schedule</h3>
+            <p>
+              Average actual shipping time is 3.50 days compared with a
+              scheduled average of 2.93 days, creating an average gap of 0.57 days.
+            </p>
+          </article>
+
+          <article class="finding">
+            <span class="finding-number">03</span>
+            <h3>Business performance remains measurable alongside operations</h3>
+            <p>
+              The dataset records $36.78M in sales and $3.97M in profit,
+              allowing operational performance to be analyzed together with
+              commercial outcomes.
+            </p>
+          </article>
+
+          <article class="finding">
+            <span class="finding-number">04</span>
+            <h3>Different analytical levels answer different questions</h3>
+            <p>
+              Order-level calculations are used for delivery KPIs, while
+              order-item aggregation is used for product, quantity, sales,
+              and category analysis.
+            </p>
+          </article>
+        </div>
+
+        <div class="note">
+          <strong>Interpretation note:</strong>
+          The dataset is a public synthetic supply chain dataset for analytical
+          and educational use. Financial and operational metrics should be
+          interpreted within the context of the dataset rather than as real-world
+          company accounting or operational records.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">07 — TOOLS & OUTPUT</p>
+          <h2>Project stack</h2>
+        </div>
+
+        <div class="tools">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Tableau</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <div class="final-links">
+          <a class="button secondary" href="https://github.com/4gnim/supply-chain-operations-delivery-analytics" target="_blank" rel="noopener noreferrer">
+            GitHub Repository
+          </a>
+          <a class="button primary" href="https://public.tableau.com/app/profile/agni.musadad/viz/SupplyChainOperationsDeliveryAnalytics/02-DeliveryOperations" target="_blank" rel="noopener noreferrer">
+            Tableau Public
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Agni Musadad</span>
+      <span>Supply Chain Operations &amp; Delivery Analytics</span>
+    </div>
+  </footer>
+</body>
+</html>

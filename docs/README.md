@@ -237,11 +237,11 @@ Interactive Analysis
 
 ### Tableau Public
 
-YOUR_TABLEAU_PUBLIC_LINK
+https://public.tableau.com/app/profile/agni.musadad/viz/SupplyChainOperationsDeliveryAnalytics/02-DeliveryOperations
 
 ### GitHub Repository
 
-YOUR_GITHUB_REPOSITORY_LINK
+https://github.com/4gnim/supply-chain-operations-delivery-analytics
 
 ### Portfolio Case Study
 

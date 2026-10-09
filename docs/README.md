@@ -245,4 +245,4 @@ https://github.com/4gnim/supply-chain-operations-delivery-analytics
 
 ### Portfolio Case Study
 
-YOUR_CASE_STUDY_LINK
+https://4gnim.github.io/supply-chain-operations-delivery-analytics

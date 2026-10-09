@@ -257,7 +257,7 @@ supply-chain-operations-delivery-analytics/
 
 ## Case Study
 
-[Read the Full Case Study](YOUR_CASE_STUDY_LINK)
+[Read the Full Case Study](https://4gnim.github.io/supply-chain-operations-delivery-analytics)
 
 ## Disclaimer
 
